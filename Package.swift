@@ -16,13 +16,14 @@ let package = Package(
         .target(
             name: "OHMySQL",
             dependencies: ["MySQL"],
-            path: "OHMySQL",
-            exclude: ["lib"],
+            path: "OHMySQL/Sources",
+            publicHeadersPath: "include",
             cSettings: [
-                .headerSearchPath("Sources"),
-                .headerSearchPath("Sources/Categories"),
-                .headerSearchPath("Sources/Constants"),
-                .headerSearchPath("Sources/Models"),
+                .headerSearchPath("."),
+                .headerSearchPath("include"),
+                .headerSearchPath("Categories"),
+                .headerSearchPath("Constants"),
+                .headerSearchPath("Models"),
             ]
         ),
         .binaryTarget(
